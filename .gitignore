@@ -1,0 +1,7 @@
+node_modules
+src/proto
+!src/proto/*.proto
+dist
+.DS_Store
+.idea
+.vscode

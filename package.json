@@ -1,0 +1,37 @@
+{
+  "name": "grpc-ts-node-practice",
+  "version": "0.0.1",
+  "description": "Practicing gRPC with TypeScript on Node.js.",
+  "main": "src",
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon --ext '*' --watch src --exec 'ts-node src/index.ts' --delay 2",
+    "test": "jest -i",
+    "test:watch": "jest -i --watch",
+    "lint:es": "eslint '**/*.{ts,tsx}'",
+    "lint:es:fix": "eslint '**/*.{ts,tsx}' --ext .ts --fix",
+    "lint:etc": "prettier '**/*.{js,ts,tsx,json,yaml,md}' --check",
+    "lint:etc:fix": "prettier '**/*.{js,ts,tsx,json,yaml,md}' --write",
+    "lint": "npm run lint:es && npm run lint:etc",
+    "lint:fix": "npm run lint:es:fix && npm run lint:etc:fix",
+    "create-indices": "node dist/scripts/create-indices.js"
+  },
+  "author": "litsynp",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.2.5",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.4"
+  }
+}
