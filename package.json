@@ -4,8 +4,11 @@
   "description": "Practicing gRPC with TypeScript on Node.js.",
   "main": "src",
   "scripts": {
-    "build": "tsc",
-    "dev": "nodemon --ext '*' --watch src --exec 'ts-node src/index.ts' --delay 2",
+    "build": "npm run proto:gen && npm run build:post && tsc",
+    "build:post": "cp -r ./src/proto ./dist",
+    "proto:gen": "./proto-gen.sh",
+    "server": "nodemon --ext '*' --watch src --exec 'ts-node src/server.ts' --delay 2",
+    "client": "ts-node src/client.ts",
     "test": "jest -i",
     "test:watch": "jest -i --watch",
     "lint:es": "eslint '**/*.{ts,tsx}'",
@@ -33,5 +36,9 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.1",
+    "@grpc/proto-loader": "^0.7.4"
   }
 }
